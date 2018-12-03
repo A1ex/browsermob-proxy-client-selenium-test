@@ -26,7 +26,12 @@ class TestHelper {
     }
 
     static getCapabilities(browserName){
-        return { 'browserName': browserName, acceptSslCerts: true, acceptInsecureCerts: true }
+        return { 'browserName': browserName, acceptSslCerts: true, acceptInsecureCerts: true,
+            'goog:chromeOptions': {
+            "useAutomationExtension":false, // ffor RemoteWebdriver
+            "args":['--start-maximized'] // function returns the args-array, so that the values aren't duplicated
+            }
+        }
     }
 }
 

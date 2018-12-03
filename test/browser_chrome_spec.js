@@ -54,8 +54,6 @@ describe('Browser - Chrome', function () {
             .withCapabilities(TestHelper.getCapabilities('chrome'))
             .setProxy(selProxy.manual(TestHelper.getManualProxy(defaultProxy.proxy.port)))
             .build();
-
-
         await driver.get(TestHelper.TEST_PAGE_URL);
 
         const har = await defaultProxy.getHar();
