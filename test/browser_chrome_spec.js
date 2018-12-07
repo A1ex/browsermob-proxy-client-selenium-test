@@ -57,6 +57,7 @@ describe('Browser - Chrome', function () {
         await driver.get(TestHelper.TEST_PAGE_URL);
 
         const har = await defaultProxy.getHar();
+        console.log(har.log.entries)
         /*var urls = TestHelper.getRequestUrls(har.log.entries);
         await driver.close();
 
